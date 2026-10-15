@@ -1,0 +1,49 @@
+{
+  "source_dataset": "alinakhay/earnings-input-reliance-benchmark",
+  "source_revision": "68e9d207a92147a1623fe33861158d48f8588826",
+  "source_file": "primary_pairs.jsonl",
+  "score_meaning": "Conditional positive-answer prefix preference; not a market probability.",
+  "license": "CC BY 4.0",
+  "attribution": "Alina Khay, Earnings Input Reliance Benchmark v1.0.0",
+  "cases": [
+    {
+      "id": "phi-tone",
+      "title": "Phi-3.5-mini: commentary tone",
+      "model_key": "phi38",
+      "block": 22,
+      "changed_cue": "sentiment",
+      "baseline_scenario": "x22_m-1_s-1_e-1_o0",
+      "changed_scenario": "x22_m-1_s1_e-1_o0",
+      "baseline_score": 0.0003264636292785411,
+      "changed_score": 0.4242036624473473,
+      "encoding": "mean of both A/B label assignments",
+      "section_order": "facts, prices, commentary"
+    },
+    {
+      "id": "phi-momentum",
+      "title": "Phi-3.5-mini: price momentum",
+      "model_key": "phi38",
+      "block": 22,
+      "changed_cue": "momentum",
+      "baseline_scenario": "x22_m-1_s-1_e-1_o0",
+      "changed_scenario": "x22_m1_s-1_e-1_o0",
+      "baseline_score": 0.0003264636292785411,
+      "changed_score": 0.42369754928956005,
+      "encoding": "mean of both A/B label assignments",
+      "section_order": "facts, prices, commentary"
+    },
+    {
+      "id": "qwen7-surprise",
+      "title": "Qwen2.5-7B: earnings surprise",
+      "model_key": "qwen7",
+      "block": 22,
+      "changed_cue": "surprise",
+      "baseline_scenario": "x22_m-1_s-1_e-1_o0",
+      "changed_scenario": "x22_m-1_s-1_e1_o0",
+      "baseline_score": 1.0456672304719965e-05,
+      "changed_score": 0.9996459511816114,
+      "encoding": "mean of both A/B label assignments",
+      "section_order": "facts, prices, commentary"
+    }
+  ]
+}
